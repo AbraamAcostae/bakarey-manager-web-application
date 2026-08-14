@@ -1,0 +1,288 @@
+{
+  "option": {
+    "home": "Inicio",
+    "about": "Sobre Nosotros",
+    "inventory": "Inventario",
+    "sign-in": "Iniciar Sesión",
+    "sign-up": "Registrarse",
+    "sign-out": "Cerrar Sesión",
+    "dashboard": "Panel de Control",
+    "production": "Producción",
+    "iot": "Monitoreo IoT",
+    "incident": "Incidentes"
+  },
+  "about": {
+    "title": "Sobre nosotros",
+    "content": "BakeryManager es una solución para las necesidades relacionadas con tu panadería."
+  },
+  "home": {
+    "title": "Bienvenido",
+    "content": "Bienvenido a BakeryManager."
+  },
+  "page-not-found": {
+    "title": "Página no encontrada",
+    "content": "La ruta <strong>{{ invalid_path }}</strong> no es válida.",
+    "go-home": "Ir al Inicio"
+  },
+  "footer": {
+    "rights": "Todos los derechos reservados.",
+    "powered-by": "Desarrollado por",
+    "and": "y"
+  },
+  "monitoring": {
+    "dashboard": {
+      "online-sensors": "Sensores en Línea",
+      "average-temperature": "Temp. Promedio",
+      "active-alerts": "Alertas Activas",
+      "last-reading": "Última Lectura"
+    },
+    "incidents": {
+      "title": "Incidentes",
+      "add": "Reportar Incidente",
+      "empty": "No hay incidentes reportados.",
+      "form": {
+        "title": "Título",
+        "description": "Descripción",
+        "submit": "Reportar",
+        "cancel": "Cancelar"
+      },
+      "actions": {
+        "confirm": "Confirmar",
+        "resolve": "Resolver",
+        "cancel": "Cancelar",
+        "delete": "Eliminar"
+      }
+    },
+    "alerts": {
+      "title": "Alertas",
+      "add": "Nueva Alerta",
+      "empty": "Aún no hay alertas.",
+      "form": {
+        "message": "Mensaje",
+        "severity": "Severidad",
+        "submit": "Crear",
+        "cancel": "Cancelar"
+      },
+      "severity": {
+        "LOW": "Baja",
+        "MEDIUM": "Media",
+        "HIGH": "Alta",
+        "CRITICAL": "Crítica"
+      },
+      "actions": {
+        "markRead": "Marcar como leída",
+        "delete": "Eliminar"
+      }
+    }
+  },
+  "inventory": {
+    "title": "Gestión de Inventario - BakeryManager",
+    "form": {
+      "title": "Registrar Nuevo Insumo",
+      "name": "Nombre del Insumo",
+      "description": "Descripción",
+      "stock": "Stock Inicial",
+      "unit": "Unidad de Medida",
+      "min_stock": "Stock Mínimo para Alerta",
+      "hint": "Se te notificará cuando el stock sea igual o menor que este valor.",
+      "button": "Añadir al Inventario",
+      "open": "Añadir Artículo",
+      "close": "Cerrar Formulario",
+      "errors": {
+        "required": "El nombre es obligatorio."
+      }
+    },
+    "table": {
+      "supply": "Insumo",
+      "actual_stock": "Stock Actual",
+      "unit": "Unidad",
+      "status": "Estado",
+      "actions": "Acciones"
+    },
+    "status": {
+      "restock": "Reabastecer",
+      "ok": "Disponible"
+    },
+    "actions": {
+      "adjustStock": "Ajustar stock",
+      "delete": "Eliminar"
+    },
+    "movement": {
+      "title": "Movimiento de Stock",
+      "entry": "Entrada",
+      "exit": "Salida",
+      "adjustment": "Ajuste",
+      "quantity": "Cantidad",
+      "reason": "Motivo",
+      "submit": "Registrar",
+      "cancel": "Cancelar"
+    },
+    "report": {
+      "title": "Reporte de Inventario",
+      "view": "Ver Reporte",
+      "hide": "Ocultar Reporte",
+      "totalItems": "Total de insumos",
+      "lowStockItems": "Insumos con stock bajo",
+      "totalValue": "Valor total"
+    },
+    "errors": {
+      "required": "Este campo es obligatorio."
+    },
+    "units": {
+      "kg": "kg",
+      "liters": "litros",
+      "units": "unidades",
+      "grams": "gramos"
+    }
+  },
+  "sign-in": {
+    "title": "Bienvenido de nuevo",
+    "subtitle": "Inicia sesión para gestionar tu panadería",
+    "email": "Correo electrónico",
+    "email-placeholder": "tu@panaderia.com",
+    "password": "Contraseña",
+    "password-placeholder": "Mín. 8 caracteres",
+    "submit": "Iniciar Sesión",
+    "loading": "Iniciando sesión...",
+    "no-account": "¿No tienes una cuenta?",
+    "create-one": "Crea una",
+    "errors": {
+      "email-required": "El correo electrónico es obligatorio.",
+      "email-invalid": "Por favor, ingresa un correo válido.",
+      "password-required": "La contraseña es obligatoria.",
+      "password-min": "La contraseña debe tener al menos 8 caracteres.",
+      "invalid-credentials": "Correo o contraseña incorrectos.",
+      "no-connection": "No se pudo conectar al servidor. Inténtalo de nuevo.",
+      "unexpected": "Ocurrió un error inesperado. Inténtalo de nuevo."
+    },
+    "panel": {
+      "title": "Gestiona tu panadería con inteligencia real",
+      "subtitle": "Monitoreo IoT · Alertas de incidentes · Analítica · Multi-sucursal"
+    }
+  },
+  "sign-up": {
+    "title": "Crea tu cuenta",
+    "subtitle": "Comienza a gestionar tu panadería de forma más inteligente",
+    "first-name": "Nombre",
+    "first-name-placeholder": "Luis",
+    "last-name": "Apellido",
+    "last-name-placeholder": "Tufiño",
+    "email": "Correo electrónico",
+    "email-placeholder": "tu@panaderia.com",
+    "role": "Tu rol",
+    "password": "Contraseña",
+    "password-placeholder": "Mín. 8 caracteres",
+    "confirm-password": "Confirmar contraseña",
+    "confirm-password-placeholder": "Repite tu contraseña",
+    "submit": "Crear Cuenta",
+    "loading": "Creando cuenta...",
+    "have-account": "¿Ya tienes una cuenta?",
+    "sign-in-link": "Inicia sesión",
+    "success": "¡Cuenta creada! Redirigiendo al inicio de sesión...",
+    "roles": {
+      "owner": "Propietario / Administrador",
+      "administrator": "Gerente de Sucursal",
+      "operational-staff": "Personal Operativo"
+    },
+    "errors": {
+      "first-name-required": "El nombre es obligatorio.",
+      "first-name-min": "Mín. 2 caracteres.",
+      "last-name-required": "El apellido es obligatorio.",
+      "last-name-min": "Mín. 2 caracteres.",
+      "email-required": "El correo electrónico es obligatorio.",
+      "email-invalid": "Por favor, ingresa un correo válido.",
+      "password-required": "La contraseña es obligatoria.",
+      "password-min": "Mín. 8 caracteres.",
+      "confirm-required": "Por favor, confirma tu contraseña.",
+      "password-mismatch": "Las contraseñas no coinciden.",
+      "email-taken": "Este correo ya está registrado.",
+      "no-connection": "No se pudo conectar al servidor. Inténtalo de nuevo.",
+      "unexpected": "Ocurrió un error inesperado. Inténtalo de nuevo."
+    }
+  },
+  "production": {
+    "title": "Producción",
+    "heading": "Gestión de Producción",
+    "empty": "Aún no hay lotes de producción.",
+    "form": {
+      "title": "Nuevo Lote de Producción",
+      "open": "Nuevo Lote",
+      "batchCode": "Código del Lote",
+      "productName": "Nombre del Producto",
+      "plannedQuantity": "Cantidad Planificada",
+      "branch": "Sede",
+      "equipment": "Equipo",
+      "submit": "Crear Lote",
+      "cancel": "Cancelar",
+      "errors": {
+        "required": "Este campo es obligatorio.",
+        "min": "El valor mínimo es 1."
+      }
+    },
+    "branches": {
+      "title": "Sedes",
+      "empty": "Aún no hay sedes.",
+      "add": "Nueva Sede",
+      "activate": "Activar",
+      "deactivate": "Desactivar",
+      "status": {
+        "active": "Activa",
+        "inactive": "Inactiva"
+      },
+      "form": {
+        "title": "Nueva Sede",
+        "name": "Nombre",
+        "location": "Ubicación",
+        "submit": "Crear Sede",
+        "cancel": "Cancelar"
+      }
+    },
+    "equipment": {
+      "title": "Equipos",
+      "empty": "Aún no hay equipos para esta sede.",
+      "add": "Nuevo Equipo",
+      "form": {
+        "title": "Nuevo Equipo",
+        "name": "Nombre",
+        "serialNumber": "Número de Serie",
+        "submit": "Registrar Equipo",
+        "cancel": "Cancelar"
+      },
+      "status": {
+        "OPERATIONAL": "Operativo",
+        "MAINTENANCE": "Mantenimiento",
+        "FAULT": "Falla",
+        "OFF": "Apagado"
+      }
+    },
+    "report": {
+      "title": "Reporte de Sede",
+      "view": "Ver Reporte",
+      "generatedAt": "Generado el",
+      "totalBatches": "Total de lotes",
+      "completedBatches": "Completados",
+      "cancelledBatches": "Cancelados",
+      "efficiency": "Eficiencia"
+    },
+    "dashboard": {
+      "active-batches": "Lotes activos",
+      "in-progress": "En progreso",
+      "completed": "Completados hoy",
+      "efficiency": "Eficiencia promedio"
+    },
+    "status": {
+      "planned": "Planificado",
+      "in-progress": "En progreso",
+      "completed": "Completado",
+      "cancelled": "Cancelado"
+    },
+    "batch": {
+      "progress": "Progreso"
+    },
+    "actions": {
+      "start": "Iniciar",
+      "complete": "Completar",
+      "cancel": "Cancelar"
+    }
+  }
+}

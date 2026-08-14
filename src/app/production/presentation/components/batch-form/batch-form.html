@@ -1,0 +1,63 @@
+<div class="batch-form-card">
+  <div class="form-title">{{ 'production.form.title' | translate }}</div>
+  <form [formGroup]="form" (ngSubmit)="onSubmit()" class="form-body">
+    <div class="field">
+      <label class="field-label">{{ 'production.form.batchCode' | translate }}</label>
+      <input class="field-input" formControlName="batchCode" placeholder="LOTE-001" />
+      @if (form.get('batchCode')?.invalid && form.get('batchCode')?.touched) {
+        <span class="field-error">{{ 'production.form.errors.required' | translate }}</span>
+      }
+    </div>
+
+    <div class="field">
+      <label class="field-label">{{ 'production.form.productName' | translate }}</label>
+      <input class="field-input" formControlName="productName" placeholder="Pan de molde" />
+      @if (form.get('productName')?.invalid && form.get('productName')?.touched) {
+        <span class="field-error">{{ 'production.form.errors.required' | translate }}</span>
+      }
+    </div>
+
+    <div class="field">
+      <label class="field-label">{{ 'production.form.plannedQuantity' | translate }}</label>
+      <input class="field-input" type="number" formControlName="plannedQuantity" min="1" />
+      @if (form.get('plannedQuantity')?.invalid && form.get('plannedQuantity')?.touched) {
+        <span class="field-error">{{ 'production.form.errors.min' | translate }}</span>
+      }
+    </div>
+
+    <div class="field">
+      <label class="field-label">{{ 'production.form.branch' | translate }}</label>
+      <select class="field-input" formControlName="branchId">
+        <option [value]="null" disabled>—</option>
+        @for (branch of branches(); track branch.id) {
+          <option [value]="branch.id">{{ branch.name }}</option>
+        }
+      </select>
+      @if (form.get('branchId')?.invalid && form.get('branchId')?.touched) {
+        <span class="field-error">{{ 'production.form.errors.required' | translate }}</span>
+      }
+    </div>
+
+    <div class="field">
+      <label class="field-label">{{ 'production.form.equipment' | translate }}</label>
+      <select class="field-input" formControlName="equipmentId" [disabled]="!form.get('branchId')?.value">
+        <option [value]="null" disabled>—</option>
+        @for (item of equipment(); track item.id) {
+          <option [value]="item.id">{{ item.name }}</option>
+        }
+      </select>
+      @if (form.get('equipmentId')?.invalid && form.get('equipmentId')?.touched) {
+        <span class="field-error">{{ 'production.form.errors.required' | translate }}</span>
+      }
+    </div>
+
+    <div class="form-actions">
+      <button type="submit" class="btn btn-primary" [disabled]="form.invalid">
+        {{ 'production.form.submit' | translate }}
+      </button>
+      <button type="button" class="btn btn-ghost" (click)="onCancel()">
+        {{ 'production.form.cancel' | translate }}
+      </button>
+    </div>
+  </form>
+</div>

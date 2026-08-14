@@ -1,0 +1,288 @@
+{
+  "option": {
+    "home": "Home",
+    "about": "About Us",
+    "inventory": "Inventory",
+    "sign-in": "Sign In",
+    "sign-up": "Sign Up",
+    "sign-out": "Sign Out",
+    "dashboard": "Dashboard",
+    "production": "Production",
+    "iot": "IOT Monitoring",
+    "incident": "Incident"
+  },
+  "about": {
+    "title": "About us",
+    "content": "BakeryManager is a solution for your bakery-related needs."
+  },
+  "home": {
+    "title": "Welcome",
+    "content": "Welcome to BakeryManager."
+  },
+  "page-not-found": {
+    "title": "Page not found",
+    "content": "The path <strong>{{ invalid_path }}</strong> is not valid.",
+    "go-home": "Go Home"
+  },
+  "footer": {
+    "rights": "All rights reserved.",
+    "powered-by": "Powered by",
+    "and": "and"
+  },
+  "monitoring": {
+    "dashboard": {
+      "online-sensors": "Online Sensors",
+      "average-temperature": "Avg. Temperature",
+      "active-alerts": "Active Alerts",
+      "last-reading": "Last Reading"
+    },
+    "incidents": {
+      "title": "Incidents",
+      "add": "Report Incident",
+      "empty": "No incidents reported.",
+      "form": {
+        "title": "Title",
+        "description": "Description",
+        "submit": "Report",
+        "cancel": "Cancel"
+      },
+      "actions": {
+        "confirm": "Confirm",
+        "resolve": "Resolve",
+        "cancel": "Cancel",
+        "delete": "Delete"
+      }
+    },
+    "alerts": {
+      "title": "Alerts",
+      "add": "New Alert",
+      "empty": "No alerts yet.",
+      "form": {
+        "message": "Message",
+        "severity": "Severity",
+        "submit": "Create",
+        "cancel": "Cancel"
+      },
+      "severity": {
+        "LOW": "Low",
+        "MEDIUM": "Medium",
+        "HIGH": "High",
+        "CRITICAL": "Critical"
+      },
+      "actions": {
+        "markRead": "Mark as read",
+        "delete": "Delete"
+      }
+    }
+  },
+  "inventory": {
+    "title": "Inventory Management - BakeryManager",
+    "form": {
+      "title": "Register New Supply",
+      "name": "Supply Name",
+      "description": "Description",
+      "stock": "Initial Stock",
+      "unit": "Unit of Measure",
+      "min_stock": "Minimum Stock for Alert",
+      "hint": "You will be notified when stock is equal to or less than this value.",
+      "button": "Add to Inventory",
+      "open": "Add Item",
+      "close": "Close Form",
+      "errors": {
+        "required": "Name is required ."
+      }
+    },
+    "table": {
+      "supply": "Supply",
+      "actual_stock": "Current Stock",
+      "unit": "Unit",
+      "status": "Status",
+      "actions": "Actions"
+    },
+    "status": {
+      "restock": "Replenish",
+      "ok": "Available"
+    },
+    "actions": {
+      "adjustStock": "Adjust stock",
+      "delete": "Delete"
+    },
+    "movement": {
+      "title": "Stock Movement",
+      "entry": "Entry",
+      "exit": "Exit",
+      "adjustment": "Adjustment",
+      "quantity": "Quantity",
+      "reason": "Reason",
+      "submit": "Register",
+      "cancel": "Cancel"
+    },
+    "report": {
+      "title": "Inventory Report",
+      "view": "View Report",
+      "hide": "Hide Report",
+      "totalItems": "Total items",
+      "lowStockItems": "Low stock items",
+      "totalValue": "Total value"
+    },
+    "errors": {
+      "required": "This field is required."
+    },
+    "units": {
+      "kg": "kg",
+      "liters": "liters",
+      "units": "units",
+      "grams": "grams"
+    }
+  },
+  "sign-in": {
+    "title": "Welcome back",
+    "subtitle": "Sign in to manage your bakery",
+    "email": "Email address",
+    "email-placeholder": "you@bakery.com",
+    "password": "Password",
+    "password-placeholder": "Min. 8 characters",
+    "submit": "Sign In",
+    "loading": "Signing in...",
+    "no-account": "Don't have an account?",
+    "create-one": "Create one",
+    "errors": {
+      "email-required": "Email is required.",
+      "email-invalid": "Please enter a valid email.",
+      "password-required": "Password is required.",
+      "password-min": "Password must be at least 8 characters.",
+      "invalid-credentials": "Invalid email or password.",
+      "no-connection": "Cannot connect to server. Please try again.",
+      "unexpected": "An unexpected error occurred. Please try again."
+    },
+    "panel": {
+      "title": "Manage your bakery with real intelligence",
+      "subtitle": "IoT monitoring · Incident alerts · Analytics · Multi-branch"
+    }
+  },
+  "sign-up": {
+    "title": "Create your account",
+    "subtitle": "Start managing your bakery smarter",
+    "first-name": "First name",
+    "first-name-placeholder": "Luis",
+    "last-name": "Last name",
+    "last-name-placeholder": "Tufiño",
+    "email": "Email address",
+    "email-placeholder": "you@bakery.com",
+    "role": "Your role",
+    "password": "Password",
+    "password-placeholder": "Min. 8 characters",
+    "confirm-password": "Confirm password",
+    "confirm-password-placeholder": "Repeat your password",
+    "submit": "Create Account",
+    "loading": "Creating account...",
+    "have-account": "Already have an account?",
+    "sign-in-link": "Sign in",
+    "success": "Account created! Redirecting to sign in...",
+    "roles": {
+      "owner": "Owner / Administrator",
+      "administrator": "Branch Manager",
+      "operational-staff": "Operational Staff"
+    },
+    "errors": {
+      "first-name-required": "First name is required.",
+      "first-name-min": "Min. 2 characters.",
+      "last-name-required": "Last name is required.",
+      "last-name-min": "Min. 2 characters.",
+      "email-required": "Email is required.",
+      "email-invalid": "Please enter a valid email.",
+      "password-required": "Password is required.",
+      "password-min": "Min. 8 characters.",
+      "confirm-required": "Please confirm your password.",
+      "password-mismatch": "Passwords do not match.",
+      "email-taken": "This email is already registered.",
+      "no-connection": "Cannot connect to server. Please try again.",
+      "unexpected": "An unexpected error occurred. Please try again."
+    }
+  },
+  "production": {
+    "title": "Production",
+    "heading": "Production Management",
+    "empty": "No production batches yet.",
+    "form": {
+      "title": "New Production Batch",
+      "open": "New Batch",
+      "batchCode": "Batch Code",
+      "productName": "Product Name",
+      "plannedQuantity": "Planned Quantity",
+      "branch": "Branch",
+      "equipment": "Equipment",
+      "submit": "Create Batch",
+      "cancel": "Cancel",
+      "errors": {
+        "required": "This field is required.",
+        "min": "Minimum value is 1."
+      }
+    },
+    "branches": {
+      "title": "Branches",
+      "empty": "No branches yet.",
+      "add": "New Branch",
+      "activate": "Activate",
+      "deactivate": "Deactivate",
+      "status": {
+        "active": "Active",
+        "inactive": "Inactive"
+      },
+      "form": {
+        "title": "New Branch",
+        "name": "Name",
+        "location": "Location",
+        "submit": "Create Branch",
+        "cancel": "Cancel"
+      }
+    },
+    "equipment": {
+      "title": "Equipment",
+      "empty": "No equipment for this branch yet.",
+      "add": "New Equipment",
+      "form": {
+        "title": "New Equipment",
+        "name": "Name",
+        "serialNumber": "Serial Number",
+        "submit": "Register Equipment",
+        "cancel": "Cancel"
+      },
+      "status": {
+        "OPERATIONAL": "Operational",
+        "MAINTENANCE": "Maintenance",
+        "FAULT": "Fault",
+        "OFF": "Off"
+      }
+    },
+    "report": {
+      "title": "Branch Report",
+      "view": "View Report",
+      "generatedAt": "Generated at",
+      "totalBatches": "Total batches",
+      "completedBatches": "Completed",
+      "cancelledBatches": "Cancelled",
+      "efficiency": "Efficiency"
+    },
+    "dashboard": {
+      "active-batches": "Active batches",
+      "in-progress": "In progress",
+      "completed": "Completed today",
+      "efficiency": "Avg. efficiency"
+    },
+    "status": {
+      "planned": "Planned",
+      "in-progress": "In progress",
+      "completed": "Completed",
+      "cancelled": "Cancelled"
+    },
+    "batch": {
+      "progress": "Progress"
+    },
+    "actions": {
+      "start": "Start",
+      "complete": "Complete",
+      "cancel": "Cancel"
+    }
+  }
+}

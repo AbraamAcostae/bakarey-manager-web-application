@@ -1,0 +1,45 @@
+<section class="branch-report">
+  <div class="section-header">
+    <h2>{{ 'production.report.title' | translate }}</h2>
+  </div>
+
+  <form [formGroup]="form" (ngSubmit)="onViewReport()" class="report-picker">
+    <select class="field-input" formControlName="branchId">
+      <option [value]="null" disabled>—</option>
+      @for (branch of branches(); track branch.id) {
+        <option [value]="branch.id">{{ branch.name }}</option>
+      }
+    </select>
+    <button type="submit" class="btn btn-primary" [disabled]="form.invalid">
+      {{ 'production.report.view' | translate }}
+    </button>
+  </form>
+
+  @if (loadError()) {
+    <div class="error-banner">{{ loadError() }}</div>
+  }
+
+  @if (report(); as r) {
+    <div class="report-card">
+      <div class="report-meta">{{ 'production.report.generatedAt' | translate }}: {{ r.generatedAt | date: 'short' }}</div>
+      <div class="report-stats">
+        <div class="stat">
+          <span class="stat-value">{{ r.totalBatches }}</span>
+          <span class="stat-label">{{ 'production.report.totalBatches' | translate }}</span>
+        </div>
+        <div class="stat">
+          <span class="stat-value">{{ r.completedBatches }}</span>
+          <span class="stat-label">{{ 'production.report.completedBatches' | translate }}</span>
+        </div>
+        <div class="stat">
+          <span class="stat-value">{{ r.cancelledBatches }}</span>
+          <span class="stat-label">{{ 'production.report.cancelledBatches' | translate }}</span>
+        </div>
+        <div class="stat">
+          <span class="stat-value">{{ (r.efficiency * 100) | number: '1.0-0' }}%</span>
+          <span class="stat-label">{{ 'production.report.efficiency' | translate }}</span>
+        </div>
+      </div>
+    </div>
+  }
+</section>

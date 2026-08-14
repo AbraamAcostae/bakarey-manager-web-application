@@ -1,0 +1,50 @@
+<section class="branch-management">
+  <div class="section-header">
+    <h2>{{ 'production.branches.title' | translate }}</h2>
+    @if (!showForm()) {
+      <button class="btn btn-primary" (click)="openForm()">+ {{ 'production.branches.add' | translate }}</button>
+    }
+  </div>
+
+  @if (showForm()) {
+    <form [formGroup]="form" (ngSubmit)="onSubmit()" class="branch-form">
+      <div class="field">
+        <label class="field-label">{{ 'production.branches.form.name' | translate }}</label>
+        <input class="field-input" formControlName="name" />
+      </div>
+      <div class="field">
+        <label class="field-label">{{ 'production.branches.form.location' | translate }}</label>
+        <input class="field-input" formControlName="location" />
+      </div>
+      <div class="form-actions">
+        <button type="submit" class="btn btn-primary" [disabled]="form.invalid">
+          {{ 'production.branches.form.submit' | translate }}
+        </button>
+        <button type="button" class="btn btn-ghost" (click)="onCancel()">
+          {{ 'production.branches.form.cancel' | translate }}
+        </button>
+      </div>
+    </form>
+  }
+
+  <div class="branch-list">
+    @for (branch of branches(); track branch.id) {
+      <div class="branch-row">
+        <div>
+          <div class="branch-name">{{ branch.name }}</div>
+          <div class="branch-location">{{ branch.location }}</div>
+        </div>
+        <div class="branch-actions">
+          <span class="badge" [class.active]="branch.active">
+            {{ (branch.active ? 'production.branches.status.active' : 'production.branches.status.inactive') | translate }}
+          </span>
+          <button class="btn btn-ghost" (click)="toggleActive(branch.id, branch.active)">
+            {{ (branch.active ? 'production.branches.deactivate' : 'production.branches.activate') | translate }}
+          </button>
+        </div>
+      </div>
+    } @empty {
+      <p class="empty">{{ 'production.branches.empty' | translate }}</p>
+    }
+  </div>
+</section>

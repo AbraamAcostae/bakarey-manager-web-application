@@ -1,0 +1,49 @@
+<section class="alert-management">
+  <div class="section-header">
+    <h2>{{ 'monitoring.alerts.title' | translate }}</h2>
+    @if (!showForm()) {
+      <button class="btn btn-primary" (click)="openForm()">+ {{ 'monitoring.alerts.add' | translate }}</button>
+    }
+  </div>
+
+  @if (showForm()) {
+    <form [formGroup]="form" (ngSubmit)="onSubmit()" class="alert-form">
+      <div class="field">
+        <label class="field-label">{{ 'monitoring.alerts.form.message' | translate }}</label>
+        <input class="field-input" formControlName="message" />
+      </div>
+      <div class="field">
+        <label class="field-label">{{ 'monitoring.alerts.form.severity' | translate }}</label>
+        <select class="field-input" formControlName="severity">
+          @for (option of severityOptions; track option.value) {
+            <option [value]="option.value">{{ ('monitoring.alerts.severity.' + option.key) | translate }}</option>
+          }
+        </select>
+      </div>
+      <div class="form-actions">
+        <button type="submit" class="btn btn-primary" [disabled]="form.invalid">
+          {{ 'monitoring.alerts.form.submit' | translate }}
+        </button>
+        <button type="button" class="btn btn-ghost" (click)="onCancel()">
+          {{ 'monitoring.alerts.form.cancel' | translate }}
+        </button>
+      </div>
+    </form>
+  }
+
+  <div class="alert-list">
+    @for (alert of alerts(); track alert.id) {
+      <div class="alert-row" [class.unread]="!alert.isRead">
+        <div class="alert-message">{{ alert.message }}</div>
+        <div class="alert-actions">
+          @if (!alert.isRead) {
+            <button class="btn btn-ghost" (click)="markAsRead(alert.id)">{{ 'monitoring.alerts.actions.markRead' | translate }}</button>
+          }
+          <button class="btn btn-ghost" (click)="delete(alert.id)">{{ 'monitoring.alerts.actions.delete' | translate }}</button>
+        </div>
+      </div>
+    } @empty {
+      <p class="empty">{{ 'monitoring.alerts.empty' | translate }}</p>
+    }
+  </div>
+</section>

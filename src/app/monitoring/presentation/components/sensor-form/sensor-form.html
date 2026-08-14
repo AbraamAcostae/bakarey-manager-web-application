@@ -1,0 +1,36 @@
+<section class="sensor-form-section">
+  @if (!showForm()) {
+    <button class="btn btn-primary" (click)="openForm()">+ Nuevo Sensor</button>
+  } @else {
+    <form [formGroup]="form" (ngSubmit)="onSubmit()" class="sensor-form">
+      <div class="field">
+        <label class="field-label">Nombre</label>
+        <input class="field-input" formControlName="name" />
+      </div>
+      <div class="field">
+        <label class="field-label">Tipo</label>
+        <select class="field-input" formControlName="type">
+          @for (option of typeOptions; track option.value) {
+            <option [value]="option.value">{{ option.label }}</option>
+          }
+        </select>
+      </div>
+      <div class="field">
+        <label class="field-label">Ubicación</label>
+        <input class="field-input" formControlName="location" />
+      </div>
+      <div class="field">
+        <label class="field-label">Umbral mínimo</label>
+        <input class="field-input" type="number" formControlName="minThreshold" />
+      </div>
+      <div class="field">
+        <label class="field-label">Umbral máximo</label>
+        <input class="field-input" type="number" formControlName="maxThreshold" />
+      </div>
+      <div class="form-actions">
+        <button type="submit" class="btn btn-primary" [disabled]="form.invalid">Registrar Sensor</button>
+        <button type="button" class="btn btn-ghost" (click)="onCancel()">Cancelar</button>
+      </div>
+    </form>
+  }
+</section>

@@ -1,0 +1,64 @@
+<section class="equipment-management">
+  <div class="section-header">
+    <h2>{{ 'production.equipment.title' | translate }}</h2>
+  </div>
+
+  <form [formGroup]="branchForm" class="branch-picker">
+    <div class="field">
+      <label class="field-label">{{ 'production.form.branch' | translate }}</label>
+      <select class="field-input" formControlName="branchId">
+        <option [value]="null" disabled>—</option>
+        @for (branch of branches(); track branch.id) {
+          <option [value]="branch.id">{{ branch.name }}</option>
+        }
+      </select>
+    </div>
+  </form>
+
+  @if (branchForm.get('branchId')?.value) {
+    <div class="section-header">
+      @if (!showForm()) {
+        <button class="btn btn-primary" (click)="openForm()">+ {{ 'production.equipment.add' | translate }}</button>
+      }
+    </div>
+
+    @if (showForm()) {
+      <form [formGroup]="form" (ngSubmit)="onSubmit()" class="equipment-form">
+        <div class="field">
+          <label class="field-label">{{ 'production.equipment.form.name' | translate }}</label>
+          <input class="field-input" formControlName="name" />
+        </div>
+        <div class="field">
+          <label class="field-label">{{ 'production.equipment.form.serialNumber' | translate }}</label>
+          <input class="field-input" formControlName="serialNumber" />
+        </div>
+        <div class="form-actions">
+          <button type="submit" class="btn btn-primary" [disabled]="form.invalid">
+            {{ 'production.equipment.form.submit' | translate }}
+          </button>
+          <button type="button" class="btn btn-ghost" (click)="onCancel()">
+            {{ 'production.equipment.form.cancel' | translate }}
+          </button>
+        </div>
+      </form>
+    }
+
+    <div class="equipment-list">
+      @for (item of equipment(); track item.id) {
+        <div class="equipment-row">
+          <div>
+            <div class="equipment-name">{{ item.name }}</div>
+            <div class="equipment-serial">{{ item.serialNumber }}</div>
+          </div>
+          <select class="field-input status-select" [value]="item.status" (change)="onStatusChange(item.id, $any($event.target).value)">
+            @for (status of statusOptions; track status) {
+              <option [value]="status">{{ ('production.equipment.status.' + status) | translate }}</option>
+            }
+          </select>
+        </div>
+      } @empty {
+        <p class="empty">{{ 'production.equipment.empty' | translate }}</p>
+      }
+    </div>
+  }
+</section>

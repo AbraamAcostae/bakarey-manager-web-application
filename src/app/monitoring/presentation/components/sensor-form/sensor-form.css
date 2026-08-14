@@ -1,0 +1,19 @@
+.sensor-form-section { margin-bottom: 16px; }
+.sensor-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 16px;
+  background: #faf6f0;
+  border-radius: 8px;
+  border: 1px solid #e7dccf;
+  max-width: 340px;
+}
+.field { display: flex; flex-direction: column; gap: 6px; }
+.field-label { font-size: 0.82rem; font-weight: 600; color: #8a7b6a; }
+.field-input { border: 1px solid #e7dccf; border-radius: 8px; padding: 9px 12px; font-size: 0.9rem; font-family: inherit; color: #2b2b2b; background: #fff; outline: none; }
+.form-actions { display: flex; gap: 10px; }
+.btn { font-family: inherit; font-size: 0.85rem; font-weight: 600; border-radius: 8px; padding: 9px 18px; cursor: pointer; border: 1.5px solid transparent; }
+.btn-primary { background: #f08b2d; color: #fff; }
+.btn-primary:disabled { background: #d8cdbf; cursor: not-allowed; }
+.btn-ghost { background: transparent; color: #f08b2d; border-color: #f08b2d; }

@@ -1,0 +1,54 @@
+<section class="incident-management">
+  <div class="section-header">
+    <h2>{{ 'monitoring.incidents.title' | translate }}</h2>
+    @if (!showForm()) {
+      <button class="btn btn-primary" (click)="openForm()">+ {{ 'monitoring.incidents.add' | translate }}</button>
+    }
+  </div>
+
+  @if (showForm()) {
+    <form [formGroup]="form" (ngSubmit)="onSubmit()" class="incident-form">
+      <div class="field">
+        <label class="field-label">{{ 'monitoring.incidents.form.title' | translate }}</label>
+        <input class="field-input" formControlName="title" />
+      </div>
+      <div class="field">
+        <label class="field-label">{{ 'monitoring.incidents.form.description' | translate }}</label>
+        <input class="field-input" formControlName="description" />
+      </div>
+      <div class="form-actions">
+        <button type="submit" class="btn btn-primary" [disabled]="form.invalid">
+          {{ 'monitoring.incidents.form.submit' | translate }}
+        </button>
+        <button type="button" class="btn btn-ghost" (click)="onCancel()">
+          {{ 'monitoring.incidents.form.cancel' | translate }}
+        </button>
+      </div>
+    </form>
+  }
+
+  <div class="incident-list">
+    @for (incident of incidents(); track incident.id) {
+      <div class="incident-row">
+        <div>
+          <div class="incident-title">{{ incident.title }}</div>
+          <div class="incident-description">{{ incident.description }}</div>
+        </div>
+        <div class="incident-actions">
+          @if (incident.status === IncidentStatus.OPEN) {
+            <button class="btn btn-ghost" (click)="confirm(incident.id)">{{ 'monitoring.incidents.actions.confirm' | translate }}</button>
+          }
+          @if (incident.status === IncidentStatus.CONFIRMED) {
+            <button class="btn btn-ghost" (click)="resolve(incident.id)">{{ 'monitoring.incidents.actions.resolve' | translate }}</button>
+          }
+          @if (incident.status !== IncidentStatus.RESOLVED && incident.status !== IncidentStatus.CANCELED) {
+            <button class="btn btn-ghost" (click)="cancelIncident(incident.id)">{{ 'monitoring.incidents.actions.cancel' | translate }}</button>
+          }
+          <button class="btn btn-ghost" (click)="delete(incident.id)">{{ 'monitoring.incidents.actions.delete' | translate }}</button>
+        </div>
+      </div>
+    } @empty {
+      <p class="empty">{{ 'monitoring.incidents.empty' | translate }}</p>
+    }
+  </div>
+</section>

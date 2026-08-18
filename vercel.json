@@ -1,0 +1,8 @@
+{
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist/BakeryManager-frontend/browser",
+  "framework": "angular",
+  "env": {
+    "NG_CLI_ANALYTICS": "ci"
+  }
+}

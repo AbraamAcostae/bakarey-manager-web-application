@@ -4,11 +4,11 @@
  */
 export const environment = {
   production: true,
-  bakeryManagerProviderApiBaseUrl: 'https://bakery-manager-platform-pkoa.onrender.com/api/v1',
+  bakeryManagerProviderApiBaseUrl: 'https://bakery-manager-platform-1.onrender.com/api/v1',
   productionProviderBatchesEndpointPath: '/batches',
   productionProviderBranchesEndpointPath: '/branches',
   productionProviderEquipmentEndpointPath: '/equipment',
-  platformProviderApiBaseUrl: 'https://bakery-manager-platform-pkoa.onrender.com/api/v1',
+  platformProviderApiBaseUrl: 'https://bakery-manager-platform-1.onrender.com/api/v1',
   platformProviderSignInEndpointPath: '/authentication/sign-in',
   platformProviderSignUpEndpointPath: '/authentication/sign-up',
   monitoringProviderIncidentsEndpointPath: '/incidents',

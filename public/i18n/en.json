@@ -6,18 +6,35 @@
     "sign-in": "Sign In",
     "sign-up": "Sign Up",
     "sign-out": "Sign Out",
-    "dashboard": "Dashboard",
+    "dashboard": "Home",
     "production": "Production",
     "iot": "IOT Monitoring",
     "incident": "Incident"
+  },
+  "profile": {
+    "title": "User Profile",
+    "user": "User",
+    "default-user": "Bakery user",
+    "options": "Options",
+    "change-password": "Change password",
+    "change-password-desc": "Update your password",
+    "email": "Email",
+    "email-desc": "Manage your email",
+    "more-options": "More options",
+    "more-options-desc": "Additional settings",
+    "language": "Language",
+    "sign-out": "Sign out"
   },
   "about": {
     "title": "About us",
     "content": "BakeryManager is a solution for your bakery-related needs."
   },
   "home": {
-    "title": "Welcome",
-    "content": "Welcome to BakeryManager."
+    "title": "Home",
+    "content": "Welcome to BakeryManager.",
+    "greeting": "Hello",
+    "welcome": "Welcome back",
+    "subtitle": "Everything is ready to manage your bakery with clarity and control."
   },
   "page-not-found": {
     "title": "Page not found",

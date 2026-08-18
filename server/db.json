@@ -4,6 +4,12 @@
       "id": 1,
       "username": "admin@bakery.com",
       "password": "12345678"
+    },
+    {
+      "password": "12345678",
+      "username": "nuevo@bakery.com",
+      "apiId": "v1",
+      "id": 2
     }
   ],
   "authentication": [
@@ -12,6 +18,30 @@
       "username": "admin@bakery.com",
       "password": "12345678",
       "token": "fake-jwt-token-bakery-2026"
+    },
+    {
+      "password": "12345678",
+      "username": "admin@bakery.com",
+      "apiId": "v1",
+      "id": 2
+    },
+    {
+      "username": "admin@bakery.com",
+      "password": "12345678",
+      "apiId": "v1",
+      "id": 3
+    },
+    {
+      "username": "admin@bakery.com",
+      "password": "12345678",
+      "apiId": "v1",
+      "id": 4
+    },
+    {
+      "username": "admin@bakery.com",
+      "password": "12345678",
+      "apiId": "v1",
+      "id": 5
     }
   ],
   "ingredients": [

@@ -1,0 +1,51 @@
+.home-view {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  padding: 8px 0 0;
+  color: var(--text-on-cream);
+}
+
+.home-header {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.home-eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: 0.72rem;
+  color: #8a6a40;
+  font-weight: 700;
+}
+
+.home-header h1 {
+  margin: 0;
+  font-size: clamp(2rem, 2.6vw, 3rem);
+  font-weight: 700;
+  font-family: Georgia, 'Times New Roman', serif;
+  color: var(--text-on-cream);
+}
+
+.home-welcome {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 760px;
+}
+
+.home-welcome h2 {
+  margin: 0;
+  font-size: clamp(1.7rem, 2vw, 2.4rem);
+  font-weight: 700;
+  font-family: Georgia, 'Times New Roman', serif;
+  color: var(--text-on-cream);
+}
+
+.home-welcome p {
+  margin: 0;
+  font-size: 1.05rem;
+  color: rgba(48, 33, 20, 0.8);
+  line-height: 1.6;
+}

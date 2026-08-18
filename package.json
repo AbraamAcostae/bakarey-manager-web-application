@@ -5,7 +5,7 @@
   "version": "1.1.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "ng serve --configuration development",
     "dev": "ng serve --configuration development",
     "mock": "json-server --watch server/db.json --routes server/routes.json --port 3000",
     "build": "ng build",

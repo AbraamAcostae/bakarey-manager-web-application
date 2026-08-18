@@ -21,22 +21,29 @@
           <span matListItemTitle>{{ option.label | translate }}</span>
         </a>
       </nav>
+
+      <button type="button" class="profile-panel" (click)="openProfileSettings()">
+        <div class="profile-summary">
+          <div class="profile-avatar" aria-label="User avatar">{{ userInitials() }}</div>
+          <div class="profile-meta">
+            <span class="profile-label">{{ 'profile.user' | translate }}</span>
+            <strong>{{ currentUserName || ('profile.default-user' | translate) }}</strong>
+          </div>
+        </div>
+      </button>
     </mat-sidenav>
 
     <mat-sidenav-content class="shell-content">
-      <header class="shell-header">
-        <div>
-          <div class="shell-eyebrow">BakeryManager</div>
-          <h1>Operations dashboard</h1>
-        </div>
-        <app-language-switcher class="shell-language-switcher"/>
-        <button mat-button (click)="signOut()">
-          <mat-icon>logout</mat-icon>
-          {{ 'option.sign-out' | translate }}
-        </button>
-      </header>
+      @if (!isProfileRoute()) {
+        <header class="shell-header">
+          <div>
+            <div class="shell-eyebrow">BakeryManager</div>
+            <h1>{{ currentSectionLabel() | translate }}</h1>
+          </div>
+        </header>
+      }
 
-      <main class="shell-main">
+      <main class="shell-main" [class.profile-page-main]="isProfileRoute()">
         <router-outlet/>
       </main>
     </mat-sidenav-content>

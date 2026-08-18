@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { TranslatePipe } from '@ngx-translate/core';
+import { IamStore } from '../../../../iam/application/iam.store';
 
 /**
  * Home view for the shared presentation context.
@@ -10,4 +11,8 @@ import { TranslatePipe } from '@ngx-translate/core';
   templateUrl: './home.html',
   styleUrl: './home.css',
 })
-export class Home {}
+export class Home {
+  private readonly iamStore = inject(IamStore);
+
+  readonly currentUserName = this.iamStore.currentUsername();
+}

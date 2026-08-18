@@ -1,23 +1,40 @@
 {
   "option": {
-    "home": "Inicio",
+    "home": "Home",
     "about": "Sobre Nosotros",
     "inventory": "Inventario",
     "sign-in": "Iniciar Sesión",
     "sign-up": "Registrarse",
     "sign-out": "Cerrar Sesión",
-    "dashboard": "Panel de Control",
+    "dashboard": "Home",
     "production": "Producción",
     "iot": "Monitoreo IoT",
     "incident": "Incidentes"
+  },
+  "profile": {
+    "title": "Perfil de Usuario",
+    "user": "Usuario",
+    "default-user": "Bakery user",
+    "options": "Opciones",
+    "change-password": "Cambiar contraseña",
+    "change-password-desc": "Actualiza tu contraseña",
+    "email": "Correo",
+    "email-desc": "Gestiona tu email",
+    "more-options": "Más opciones",
+    "more-options-desc": "Configuración adicional",
+    "language": "Idioma",
+    "sign-out": "Cerrar sesión"
   },
   "about": {
     "title": "Sobre nosotros",
     "content": "BakeryManager es una solución para las necesidades relacionadas con tu panadería."
   },
   "home": {
-    "title": "Bienvenido",
-    "content": "Bienvenido a BakeryManager."
+    "title": "Home",
+    "content": "Bienvenido a BakeryManager.",
+    "greeting": "Hola",
+    "welcome": "Bienvenido de nuevo",
+    "subtitle": "Todo listo para gestionar tu panadería con claridad y control."
   },
   "page-not-found": {
     "title": "Página no encontrada",

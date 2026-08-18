@@ -1,16 +1,27 @@
-<div class="sensor-card">
-  <div class="sensor-name">{{ sensor.name }}</div>
-  <div class="sensor-location">{{ sensor.location }}</div>
-  <div class="value-row">
-    <div class="type-label">
-      {{ sensor.type === SensorType.TEMPERATURE ? 'Temperatura' : sensor.type === SensorType.HUMIDITY ? 'Humedad Relativa' : sensor.type === SensorType.GAS ? 'Gas' : 'Vapor' }}
+<div class="sensor-card" [class.is-inactive]="sensor.status !== SensorStatus.ACTIVE">
+  <div class="sensor-card-header">
+    <div class="sensor-badge">
+      {{ sensor.type === SensorType.TEMPERATURE ? 'T' : sensor.type === SensorType.HUMIDITY ? 'H' : sensor.type === SensorType.GAS ? 'G' : 'V' }}
     </div>
-    <div class="status-container">
+    <span class="sensor-status" [class.active]="sensor.status === SensorStatus.ACTIVE" [class.inactive]="sensor.status !== SensorStatus.ACTIVE">
       {{ sensor.status === SensorStatus.ACTIVE ? 'Activo' : 'Inactivo' }}
-    </div>
+    </span>
   </div>
+
+  <div class="sensor-main">
+    <div class="sensor-name">{{ sensor.name }}</div>
+    <div class="sensor-location">{{ sensor.location }}</div>
+  </div>
+
+  <div class="sensor-meta">
+    <span class="type-label">
+      {{ sensor.type === SensorType.TEMPERATURE ? 'Temperatura' : sensor.type === SensorType.HUMIDITY ? 'Humedad' : sensor.type === SensorType.GAS ? 'Gas' : 'Vapor' }}
+    </span>
+    <span class="sensor-kind">{{ sensor.type === SensorType.TEMPERATURE ? '°C' : sensor.type === SensorType.HUMIDITY ? '%' : sensor.type === SensorType.GAS ? 'ppm' : 'ppm' }}</span>
+  </div>
+
   <div class="tile-actions">
-    <button class="btn btn-ghost" (click)="toggleStatus.emit(sensor.id)">
+    <button class="btn btn-primary" (click)="toggleStatus.emit(sensor.id)">
       {{ sensor.status === SensorStatus.ACTIVE ? 'Desactivar' : 'Activar' }}
     </button>
     <button class="btn btn-ghost" (click)="deleteSensor.emit(sensor.id)">Eliminar</button>

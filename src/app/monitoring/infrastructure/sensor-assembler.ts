@@ -1,6 +1,8 @@
 import { BaseAssembler } from '../../shared/infrastructure/base-assembler';
 import { SensorResource, SensorsResponse } from './sensors-response';
 import { Sensor } from '../domain/model/sensor.entity';
+import { SensorType } from '../domain/model/sensor-type.value-object';
+import { SensorStatus } from '../domain/model/sensor-status.value-object';
 
 /**
  * Maps sensor infrastructure contracts to domain entities and back.
@@ -17,16 +19,19 @@ export class SensorAssembler implements BaseAssembler<Sensor, SensorResource, Se
    * Maps one sensor resource contract into a domain entity.
    */
   toEntityFromResource(resource: SensorResource): Sensor {
+    const typeValue = (resource.sensorType ?? (resource as any).type ?? 0) as SensorType;
+    const statusValue = (resource.sensorStatus ?? (resource as any).status ?? 0) as SensorStatus;
+
     return new Sensor({
       id: resource.id,
       name: resource.name,
-      type: resource.sensorType,
-      status: resource.sensorStatus,
+      type: typeValue,
+      status: statusValue,
       location: resource.location,
       minThreshold: resource.minThreshold,
       maxThreshold: resource.maxThreshold,
       installedAt: new Date(resource.installedAt),
-      lastReadingAt: (resource.lastReadingAt as null) && new Date(resource.lastReadingAt as string),
+      lastReadingAt: resource.lastReadingAt ? new Date(resource.lastReadingAt) : null,
     });
   }
 
@@ -34,16 +39,21 @@ export class SensorAssembler implements BaseAssembler<Sensor, SensorResource, Se
    * Maps one sensor domain entity into an infrastructure resource contract.
    */
   toResourceFromEntity(entity: Sensor): SensorResource {
+    const statusValue = entity.status as number;
+    const typeValue = entity.type as number;
+
     return {
       id: entity.id,
       name: entity.name,
-      sensorType: entity.type as number,
-      sensorStatus: entity.status as number,
+      type: typeValue,
+      status: statusValue,
+      sensorType: typeValue,
+      sensorStatus: statusValue,
       location: entity.location,
       minThreshold: entity.minThreshold,
       maxThreshold: entity.maxThreshold,
       installedAt: entity.installedAt.toISOString(),
-      lastReadingAt: entity.lastReadingAt?.toISOString(),
+      lastReadingAt: entity.lastReadingAt?.toISOString() ?? null,
     } as SensorResource;
   }
 }

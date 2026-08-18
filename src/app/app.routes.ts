@@ -15,11 +15,14 @@ const signIn = () =>
   import('./iam/presentation/views/sign-in-form/sign-in-form').then((m) => m.SignInForm);
 const signUp = () =>
   import('./iam/presentation/views/sign-up-form/sign-up-form').then((m) => m.SignUpForm);
+const profileSettings = () =>
+  import('./iam/presentation/views/profile-settings/profile-settings').then((m) => m.ProfileSettings);
 
 const baseTitle = 'BakeryManager';
 
 export const routes: Routes = [
   { path: 'home', component: Home, title: `${baseTitle} - Home`, canActivate: [iamGuard] },
+  { path: 'profile', loadComponent: profileSettings, title: `${baseTitle} - Profile`, canActivate: [iamGuard] },
   { path: 'production', loadChildren: productionRoutes, canActivate: [iamGuard] },
   { path: 'monitoring', loadChildren: monitoringRoutes, canActivate: [iamGuard] },
   { path: 'inventory', loadChildren: inventoryRoutes, canActivate: [iamGuard] },

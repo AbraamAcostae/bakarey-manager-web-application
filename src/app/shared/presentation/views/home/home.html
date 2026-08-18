@@ -1,4 +1,10 @@
-<div class="container-with-spacing">
-  <h1>{{ 'home.title' | translate }}</h1>
-  <p>{{ 'home.content' | translate }}</p>
+<div class="home-view">
+  <div class="home-header">
+    <div class="home-eyebrow">BakeryManager</div>
+  </div>
+
+  <div class="home-welcome">
+    <h2>{{ 'home.welcome' | translate }}, {{ currentUserName || 'Bakery user' }}.</h2>
+    <p>{{ 'home.subtitle' | translate }}</p>
+  </div>
 </div>
